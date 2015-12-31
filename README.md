@@ -50,47 +50,43 @@ In **Apple Icon > System Preferences**:
 
 ## Apps
 
-Google Chrome
-
+Google Chrome  
 [www.google.com/chrome](https://www.google.com/intl/en/chrome/browser/). 
 
-Firefox
-
+Firefox  
 [https://www.mozilla.org/en-US/firefox/new/](https://www.mozilla.org/en-US/firefox/new/)
 
-Querious - MySQL Tool
-
+Querious - MySQL Tool  
 [http://www.araelium.com/querious/](http://www.araelium.com/querious/)
 
-Evernote - Storing notes and stuff
-
+Evernote - Storing notes and stuff  
 [https://evernote.com/](https://evernote.com/)
 
-Sublime3 - Text Editor
+Sublime3 - Text Editor  
 [http://www.sublimetext.com/3](http://www.sublimetext.com/3)
 
-Ultraedit - Text Editor
+Ultraedit - Text Editor  
 [http://www.ultraedit.com/downloads/uex.html](http://www.ultraedit.com/downloads/uex.html)
 
-PhpStorm - IDE
+PhpStorm - IDE  
 [https://www.jetbrains.com/phpstorm/](https://www.jetbrains.com/phpstorm/)
 
-Git Tower - Version Control
+Git Tower - Version Control  
 [http://www.git-tower.com](http://www.git-tower.com)
 
-Github Desktop - Version Control
+Github Desktop - Version Control  
 [https://desktop.github.com](https://desktop.github.com)
 
-Affinity Designer - Illustrator, Vector editor
+Affinity Designer - Illustrator, Vector editor  
 [https://itunes.apple.com/us/app/affinity-designer/id824171161?mt=12](https://itunes.apple.com/us/app/affinity-designer/id824171161?mt=12)
 
-Airmail 2 - Email client
+Airmail 2 - Email client  
 [https://itunes.apple.com/us/app/airmail-2.5/id918858936?mt=12](https://itunes.apple.com/us/app/airmail-2.5/id918858936?mt=12)
 
-Dash - Search Docs
+Dash - Search Docs  
 [https://itunes.apple.com/us/app/dash-3-api-docs-snippets./id449589707?mt=12](https://itunes.apple.com/us/app/dash-3-api-docs-snippets./id449589707?mt=12)
 
-BetterSnapTool - Resizing windows
+BetterSnapTool - Resizing windows  
 [https://itunes.apple.com/us/app/bettersnaptool/id417375580?mt=12](https://itunes.apple.com/us/app/bettersnaptool/id417375580?mt=12)
 
 
