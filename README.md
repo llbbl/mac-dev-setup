@@ -51,15 +51,19 @@ In **Apple Icon > System Preferences**:
 ## Apps
 
 Google Chrome
+
 [www.google.com/chrome](https://www.google.com/intl/en/chrome/browser/). 
 
 Firefox
+
 [https://www.mozilla.org/en-US/firefox/new/](https://www.mozilla.org/en-US/firefox/new/)
 
 Querious - MySQL Tool
+
 [http://www.araelium.com/querious/](http://www.araelium.com/querious/)
 
 Evernote - Storing notes and stuff
+
 [https://evernote.com/](https://evernote.com/)
 
 Sublime3 - Text Editor
