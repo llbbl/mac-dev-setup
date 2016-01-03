@@ -89,6 +89,15 @@ Dash - Search Docs
 BetterSnapTool - Resizing windows  
 [https://itunes.apple.com/us/app/bettersnaptool/id417375580?mt=12](https://itunes.apple.com/us/app/bettersnaptool/id417375580?mt=12)
 
+Dropbox  
+[https://www.dropbox.com/install](https://www.dropbox.com/install)
+
+Google Drive  
+[https://www.google.com/drive/](https://www.google.com/drive/)
+
+Adobe Photoshop  
+[https://creative.adobe.com/products/download/photoshop](https://creative.adobe.com/products/download/photoshop)
+
 
 
 ## iTerm2
