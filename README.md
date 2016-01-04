@@ -18,20 +18,13 @@ If you have any comments or suggestions, feel free to give me a shout [on Twitte
 - [Sublime Text](#sublime-text)
 - [Vim](#vim)
 - [Python](#python)
-- [Virtualenv](#virtualenv)
-- [IPython](#ipython)
-- [Numpy and Scipy](#numpy-and-scipy)
 - [MySQL](#mysql)
 - [Node.js](#nodejs)
-- [JSHint](#jshint)
 - [Ruby and RVM](#ruby-and-rvm)
 - [LESS](#less)
 - [Heroku](#heroku)
-- [MongoDB](#mongodb)
 - [Redis](#redis)
-- [Elasticsearch](#elasticsearch)
-- [Projects folder](#projects-folder)
-- [Apps](#apps)
+
 
 ## System update
 
@@ -97,7 +90,6 @@ Google Drive
 
 Adobe Photoshop  
 [https://creative.adobe.com/products/download/photoshop](https://creative.adobe.com/products/download/photoshop)
-
 
 
 ## iTerm2
