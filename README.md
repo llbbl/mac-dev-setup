@@ -150,6 +150,8 @@ brew tap homebrew/homebrew-php
 
 brew install --without-apache --with-fpm --with-mysql php55
 
+brew install php55-xdebug composer
+
 
 ## nginx
 
@@ -172,6 +174,7 @@ curl -L https://gist.githubusercontent.com/llbbl/321c0c6981ccfd33f04e/raw/464e7f
 curl -L https://gist.githubusercontent.com/llbbl/a4635cd4985374374957/raw/3caa8da2345b98765a8c4ee0da367402e50f80af/php.conf -o /usr/local/etc/nginx/global/php.conf
 
 curl -L https://gist.githubusercontent.com/llbbl/13594edde83da889603f/raw/9705f3e2c309a944e97294e296974741a3634557/common.conf -o /usr/local/etc/nginx/global/global.conf
+
 
 
 ## LaunchRocket
@@ -397,118 +400,9 @@ export PATH
     
 Save the file and open a new terminal to take the new `$PATH` into account (everytime you open a terminal, `.bash_profile` gets loaded).
 
-### Pip Usage
 
-Here are a couple Pip commands to get you started. To install a Python package:
 
-    $ pip install <package>
 
-To upgrade a package:
-
-    $ pip install --upgrade <package>
-        
-To see what's installed:
-
-    $ pip freeze
-    
-To uninstall a package:
-
-    $ pip uninstall <package>
-
-## Virtualenv
-
-[Virtualenv](http://www.virtualenv.org/) is a tool that creates an isolated Python environment for each of your projects. For a particular project, instead of installing required packages globally, it is best to install them in an isolated folder in the project (say a folder named `venv`), that will be managed by virtualenv.
-
-The advantage is that different projects might require different versions of packages, and it would be hard to manage that if you install packages globally. It also allows you to keep your global `/usr/local/lib/python2.7/site-packages` folder clean, containing only critical or big packages that you always need (like IPython, Numpy).
-
-### Install
-
-To install virtualenv, simply run:
-
-    $ pip install virtualenv
-
-### Usage
-
-Let's say you have a project in a directory called `myproject`. To set up virtualenv for that project:
-
-    $ cd myproject/
-    $ virtualenv venv --distribute
-    
-If you want your virtualenv to also inherit globally installed packages (like IPython or Numpy mentioned above), use:
-
-    $ virtualenv venv --distribute --system-site-packages
-
-These commands create a `venv` subdirectory in your project where everything is installed. You need to **activate** it first though (in every terminal where you are working on your project):
-
-    $ source venv/bin/activate
-    
-You should see a `(venv)` appear at the beginning of your terminal prompt indicating that you are working inside the virtualenv. Now when you install something:
-
-    $ pip install <package>
-
-It will get installed in the `venv` folder, and not conflict with other projects.
-
-**Important**: Remember to add `venv` to your project's `.gitignore` file so you don't include all of that in your source code!
-
-As mentioned earlier, I like to install big packages (like Numpy), or packages I always use (like IPython) globally. All the rest I install in a virtualenv.
-
-## IPython
-
-[IPython](http://ipython.org/) is an awesome project which provides a much better Python shell than the one you get from running `$ python` in the command-line. It has many cool functions (running Unix commands from the Python shell, easy copy & paste, creating Matplotlib charts in-line, etc.) and I'll let you refer to the [documentation](http://ipython.org/ipython-doc/stable/index.html) to discover them.
-
-### Install
-
-Before we install IPython, we'll need to get some dependencies. Run the following:
-
-    $ brew update # Always good to do
-    $ brew install zeromq # Necessary for pyzmq
-    $ brew install pyqt # Necessary for the qtconsole
-    
-It may take a few minutes to build these.
-
-Once it's done, we can install IPython with all the available options:
-
-    $ pip install ipython[zmq,qtconsole,notebook,test]
-
-### Usage
-
-You can launch IPython from the command line with `$ ipython`, but what's more interesting is to use its [QT Console](http://ipython.org/ipython-doc/stable/interactive/qtconsole.html). Launch the QT Console by running:
-
-    $ ipython qtconsole
-    
-You can also customize the font it uses:
-
-    $ ipython qtconsole --ConsoleWidget.font_family="Consolas" --ConsoleWidget.font_size=13
-    
-And since I'm lazy and I don't want to type or copy & paste that all the time, I'm going to create an alias for it. Create a `.extra` text file in your home directory with `$ subl ~/.extra` (I've set up `.bash_profile` to load `.extra`), and add the following line:
-
-```bash
-alias ipy='ipython qtconsole --ConsoleWidget.font_family="Consolas" --ConsoleWidget.font_size=13'
-```
-    
-Open a fresh terminal. Now when you run `$ ipy`, it will launch the QT Console with your configured options.
-
-To use the in-line Matplotlib functionality (nice for scientific computing), run `$ ipy --pylab=inline`.
-
-## Numpy and Scipy
-
-The [Numpy](http://numpy.scipy.org/) and [Scipy](http://www.scipy.org/SciPy) scientific libraries for Python are always a little tricky to install from source because they have all these dependencies they need to build correctly. Luckily for us, [Samuel John](http://www.samueljohn.de/) has put together some [Homebrew formulae](https://github.com/samueljohn/homebrew-python) to make it easier to install these Python libraries.
-
-First, grab the special formulae (which are not part of Homebrew core):
-
-    $ brew tap samueljohn/python
-    $ brew tap homebrew/science
-    
-Then, install the `gfortran` dependency (now in `gcc`) which we will need to build the libraries:
-
-    $ brew install gcc
-    
-Finally, you can install Numpy and Scipy with:
-
-    $ brew install numpy
-    $ brew install scipy
-    
-(It may take a few minutes to build.)
 
 ## MySQL
 
@@ -549,11 +443,6 @@ To connect with the command-line client, run:
 
 **Note**: By default, the MySQL user `root` has no password. It doesn't really matter for a local development database. If you wish to change it though, you can use `$ mysqladmin -u root password 'new-password'`.
 
-### MySQL Workbench
-
-In terms of a GUI client for MySQL, I'm used to the official and free [MySQL Workbench](http://www.mysql.com/products/workbench/). But feel free to use whichever you prefer.
-
-You can find the MySQL Workbench download [here](http://www.mysql.com/downloads/workbench/). (**Note**: It will ask you to sign in, you don't need to, just click on "No thanks, just start my download!" at the bottom.)
 
 ## Node.js
 
@@ -585,45 +474,6 @@ Node modules are installed locally in the `node_modules` folder of each project 
     $ npm install -g coffee-script
     $ npm install -g grunt-cli
 
-### Npm usage
-
-To install a package:
-
-    $ npm install <package> # Install locally
-    $ npm install -g <package> # Install globally
-
-To install a package and save it in your project's `package.json` file:
-
-    $ npm install <package> --save
-
-To see what's installed:
-
-    $ npm list # Local
-    $ npm list -g # Global
-
-To find outdated packages (locally or globally):
-
-    $ npm outdated [-g]
-
-To upgrade all or a particular package:
-
-    $ npm update [<package>]
-
-To uninstall a package:
-
-    $ npm uninstall <package>
-
-##JSHint
-
-JSHint is a JavaScript developer's best friend. 
-
-If the extra credit assignment to install Sublime Package Manager was completed, JSHint can be run as part of Sublime Text. 
-
-Install JSHint via npm (global install preferred)
-
-    $ npm install -g jshint
-
-Follow additional instructions on the [JSHint Package Manager page](https://sublime.wbond.net/packages/JSHint) or [build it manually](https://github.com/jshint/jshint).
 
 ## Ruby and RVM
 
@@ -684,18 +534,6 @@ Update to its latest version with:
 To install a "gem" (Ruby package), run:
 
     $ gem install <gemname>
-        
-To install without generating the documentation for each gem (faster):
-
-    $ gem install <gemname> --no-document
-        
-To see what gems you have installed:
-
-    $ gem list
-    
-To check if any installed gems are outdated:
-
-    $ gem outdated
     
 To update all gems or a particular gem:
 
@@ -729,19 +567,8 @@ This should output some information about the compiler:
 
     lessc 1.5.1 (LESS Compiler) [JavaScript]
 
-Okay, LESS is installed and running. Great! 
+Okay, LESS is installed and running. Great!
 
-### Usage
-
-There's a lot of different ways to use LESS. Generally I use it to compile my stylesheet locally. You can do that by using this command in the terminal:
-
-    $ lessc template.less template.css
-
-The two options are the "input" and "output" files for the compiler. The command looks in the current directory for the LESS stylesheet, compiles it, and outputs it to the second file in the same directory. You can add in paths to keep your project files organized:
-
-    $ lessc less/template.less css/template.css
-
-Read more about LESS on their page here: http://lesscss.org/
 
 ## Heroku
 
@@ -786,28 +613,6 @@ Once the key business is done, you're ready to deploy apps! Heroku has a great [
     
 The [Heroku Dev Center](https://devcenter.heroku.com/) is full of great resources, so be sure to check it out!
 
-## MongoDB
-
-[MongoDB](http://www.mongodb.org/) is a popular [NoSQL](http://en.wikipedia.org/wiki/NoSQL) database.
-
-### Install
-
-Installing it is very easy through Homebrew:
-
-    $ brew update
-    $ brew install mongo
-
-### Usage
-
-In a terminal, start the MongoDB server:
-
-    $ mongod
-
-In another terminal, connect to the database with the Mongo shell using:
-
-    $ mongo
-
-I'll let you refer to MongoDB's [Getting Started](http://docs.mongodb.org/manual/tutorial/getting-started/) guide for more!
 
 ## Redis
 
@@ -836,77 +641,6 @@ In another terminal, connect to the server with the Redis command-line interface
 
 I'll let you refer to Redis' [documentation](http://redis.io/documentation) or other tutorials for more information.
 
-## Elasticsearch
-
-As it says on the box, [Elasticsearch](http://www.elasticsearch.org/) is a "powerful open source, distributed real-time search and analytics engine". It uses an HTTP REST API, making it really easy to work with from any programming language.
-
-You can use elasticsearch for such cool things as real-time search results, autocomplete, recommendations, machine learning, and more.
-
-### Install
-
-Elasticsearch runs on Java, so check if you have it installed by running:
-
-```bash
-java -version
-```
-
-If Java isn't installed yet, a window will appear prompting you to install it. Go ahead and click "Install".
-
-Next, install elasticsearch with:
-
-```bash
-$ brew install elasticsearch
-```
-
-**Note**: Elasticsearch also has a `plugin` program that gets moved to your `PATH`. I find that too generic of a name, so I rename it to `elasticsearch-plugin` by running (will need to do that again if you update elasticsearch):
-
-```bash
-$ mv /usr/local/bin/plugin /usr/local/bin/elasticsearch-plugin
-```
-
-Below I will use `elasticsearch-plugin`, just replace it with `plugin` if you haven't followed this step.
-
-As you guessed, you can add plugins to elasticsearch. A popular one is [elasticsearch-head](http://mobz.github.io/elasticsearch-head/), which gives you a web interface to the REST API. Install it with:
-
-```bash
-$ elasticsearch-plugin --install mobz/elasticsearch-head
-```
-
-### Usage
-
-Start a local elasticsearch server with:
-
-```bash
-$ elasticsearch -f
-```
-
-(The `-f` option tells it to run in the foreground, so you can stop it with `Ctrl+C`.)
-
-Test that the server is working correctly by running:
-
-```bash
-$ curl -XGET 'http://localhost:9200/'
-```
-
-If you installed the elasticsearch-head plugin, you can visit its interface at `http://localhost:9200/_plugin/head/`.
-
-Elasticsearch's [documentation](http://www.elasticsearch.org/guide/) is more of a reference. To get started, I suggest reading some of the blog posts linked on this [StackOverflow answer](http://stackoverflow.com/questions/11593035/beginners-guide-to-elasticsearch/11767610#11767610).
-
-## Projects folder
-
-This really depends on how you want to organize your files, but I like to put all my version-controlled projects in `~/Projects`. Other documents I may have, or things not yet under version control, I like to put in `~/Dropbox` (if you have Dropbox installed), or `~/Documents`.
-
-## Apps
-
-Here is a quick list of some apps I use, and that you might find useful as well:
-
-- [Dropbox](https://www.dropbox.com/): File syncing to the cloud. I put all my documents in Dropbox. It syncs them to all my devices (laptop, mobile, tablet), and serves as a backup as well! **(Free for 2GB)**
-- [Google Drive](https://drive.google.com/): File syncing to the cloud too! I use Google Docs a lot to collaborate with others (edit a document with multiple people in real-time!), and sometimes upload other non-Google documents (pictures, etc.), so the app comes in handy for that. **(Free for 5GB)**
-- [1Password](https://agilebits.com/onepassword): Allows you to securely store your login and passwords. Even if you only use a few different passwords (they say you shouldn't!), this is really handy to keep track of all the accounts you sign up for! Also, they have a mobile app so you always have all your passwords with you (syncs with Dropbox). A little pricey though. There are free alternatives. **($50 for Mac app, $18 for iOS app)**
-- [Marked](http://markedapp.com/): As a developer, most of the stuff you write ends up being in [Markdown](http://daringfireball.net/projects/markdown/). In fact, this `README.md` file (possibly the most important file of a GitHub repo) is indeed in Markdown, written in Sublime Text, and I use Marked to preview the results everytime I save. **($4)**
-- [Path Finder](http://cocoatech.com/pathfinder/): I love OSX, it's Unix so great for developers, and all of it just works and looks pretty! Only thing I "miss" from Windows (OMG what did he say?), is a decent file explorer. I think Finder is a pain to use. So I gladly paid for this alternative, but I understand others might find it expensive just to not have to use Finder. **($40)**
-- [Evernote](https://evernote.com/): If I don't write something down, I'll forget it. As a developer, you learn so many new things every day, and technology keeps changing, it would be insane to want to keep it all in your head. So take notes, sync them to the cloud, and have them on all your devices. To be honest, I switched to [Simplenote](http://simplenote.com/) because I only take text notes, and I got tired of Evernote putting extra spaces between paragraphs when I copy & pasted into other applications. Simplenote is so much better for text notes (and it supports Markdown!). **(Both are free)**
-- [Moom](http://manytricks.com/moom/): Don't waste time resizing and moving your windows. Moom makes this very easy. **($10)**
 
 
 
