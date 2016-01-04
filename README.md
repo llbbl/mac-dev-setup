@@ -140,6 +140,46 @@ Open a new terminal tab with **Cmd+T** (you should also close the old one), then
 
     brew doctor
 
+## PHP
+
+brew tap homebrew/dupes
+
+brew tap homebrew/versions
+
+brew tap homebrew/homebrew-php
+
+brew install --without-apache --with-fpm --with-mysql php55
+
+
+## nginx
+
+brew tap homebrew/nginx
+
+brew install nginx
+
+
+mkdir -p /usr/local/etc/nginx/logs
+mkdir -p /usr/local/etc/nginx/sites-available
+mkdir -p /usr/local/etc/nginx/sites-enabled
+mkdir -p /usr/local/etc/nginx/global
+mkdir -p /usr/local/etc/nginx/conf.d
+mkdir -p /usr/local/etc/nginx/ssl
+
+rm /usr/local/etc/nginx/nginx.conf
+
+curl -L https://gist.githubusercontent.com/llbbl/321c0c6981ccfd33f04e/raw/464e7f7852fbb81a39cdc716df172a6e51684414/osx-nginx.conf -o /usr/local/etc/nginx/nginx.conf
+
+curl -L https://gist.githubusercontent.com/llbbl/a4635cd4985374374957/raw/3caa8da2345b98765a8c4ee0da367402e50f80af/php.conf -o /usr/local/etc/nginx/global/php.conf
+
+curl -L https://gist.githubusercontent.com/llbbl/13594edde83da889603f/raw/9705f3e2c309a944e97294e296974741a3634557/common.conf -o /usr/local/etc/nginx/global/global.conf
+
+
+## LaunchRocket
+
+A Mac PreferencePane for managing services with launchd.  
+[https://github.com/jimbojsb/launchrocket](https://github.com/jimbojsb/launchrocket)
+
+brew cask install launchrocket
 
 
 ## Consolas
