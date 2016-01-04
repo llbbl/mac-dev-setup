@@ -1,6 +1,6 @@
 # Mac OS X Dev Setup
 
-This document describes howto setup a developer environment on a new Mac. We will set up PHP, Python, MySQL, Ruby and Redis.
+This document describes howto setup a developer environment on a new Mac. We will set up PHP, nginx, Python, MySQL, Ruby, Node and Redis.
 
 
 - [System update](#system-update)
