@@ -261,6 +261,31 @@ To push code to your GitHub repositories, we're going to use the recommended HTT
 
 With the terminal, the text editor is a developer's most important tool. Everyone has their preferences, but unless you're a hardcore [Vim](http://en.wikipedia.org/wiki/Vim_(text_editor)) user, a lot of people are going to tell you that [Sublime Text](http://www.sublimetext.com/) is currently the best one out there.
 
+Install Package Control  
+[https://packagecontrol.io/installation](https://packagecontrol.io/installation)
+
+Some Packages to Install:
+
+auto-save  
+[https://packagecontrol.io/packages/auto-save](https://packagecontrol.io/packages/auto-save)
+
+CSS Format  
+[https://packagecontrol.io/packages/CSS%20Format](https://packagecontrol.io/packages/CSS%20Format)
+
+Dracula Color Scheme  
+[https://packagecontrol.io/packages/Dracula%20Color%20Scheme](https://packagecontrol.io/packages/Dracula%20Color%20Scheme)
+
+HTMLBeautify  
+[https://packagecontrol.io/packages/HTMLBeautify](https://packagecontrol.io/packages/HTMLBeautify)
+
+SCSS  
+[https://packagecontrol.io/packages/SCSS](https://packagecontrol.io/packages/SCSS)
+
+Theme - Spacegray
+[https://packagecontrol.io/packages/Theme%20-%20Spacegray](https://packagecontrol.io/packages/Theme%20-%20Spacegray)
+
+
+
 Just like the terminal, let's configure our editor a little. Go to **Sublime Text 2 > Preferences > Settings - User** and paste the following in the file that just opened:
 
 ```json
