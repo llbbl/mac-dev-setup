@@ -8,7 +8,6 @@ This document describes howto setup a developer environment on a new Mac. We wil
 - [Apps](#Apps)
 - [iTerm2](#iterm2)
 - [Homebrew](#homebrew)
-- [Consolas](#consolas)
 - [Beautiful terminal](#beautiful-terminal)
 - [iTerm2](#iterm2)
 - [Git](#git)
@@ -174,24 +173,6 @@ A Mac PreferencePane for managing services with launchd.
 brew cask install launchrocket
 
 
-## Consolas
-
-I really like the Consolas font for coding. Being a Microsoft (!) font, it is not installed by default. Since we're going to be looking at a lot of terminal output and code, let's install it now.
-
-There are two ways we can install it. If you bought **Microsoft Office for Mac**, install that and Consolas will be installed as well.
-
-If you don't have Office, follow these steps:
-
-    $ brew install cabextract
-    $ cd ~/Downloads
-    $ mkdir consolas
-    $ cd consolas
-    $ curl -O http://download.microsoft.com/download/f/5/a/f5a3df76-d856-4a61-a6bd-722f52a5be26/PowerPointViewer.exe
-    $ cabextract PowerPointViewer.exe
-    $ cabextract ppviewer.cab
-    $ open CONSOLA*.TTF
-
-And click **Install Font**. Thanks to Alexander Zhuravlev for his [post](http://blog.ikato.com/post/15675823000/how-to-install-consolas-font-on-mac-os-x).
 
 ## Beautiful terminal
 
