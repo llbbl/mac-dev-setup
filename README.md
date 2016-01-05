@@ -257,6 +257,13 @@ To push code to your GitHub repositories, we're going to use the recommended HTT
     
 **Note**: On a Mac, it is important to remember to add `.DS_Store` (a hidden OS X system file that's put in folders) to your `.gitignore` files. You can take a look at this repository's [.gitignore](https://github.com/nicolashery/mac-dev-setup/blob/master/.gitignore) file for inspiration.
     
+## Source Code Pro Font
+
+Download the release here:  
+[https://github.com/adobe-fonts/source-code-pro/tree/release](https://github.com/adobe-fonts/source-code-pro/tree/release)
+
+Double click on the files in the OTF folder to install
+
 ## Sublime Text
 
 With the terminal, the text editor is a developer's most important tool. Everyone has their preferences, but unless you're a hardcore [Vim](http://en.wikipedia.org/wiki/Vim_(text_editor)) user, a lot of people are going to tell you that [Sublime Text](http://www.sublimetext.com/) is currently the best one out there.
@@ -281,7 +288,7 @@ HTMLBeautify
 SCSS  
 [https://packagecontrol.io/packages/SCSS](https://packagecontrol.io/packages/SCSS)
 
-Theme - Spacegray
+Theme - Spacegray  
 [https://packagecontrol.io/packages/Theme%20-%20Spacegray](https://packagecontrol.io/packages/Theme%20-%20Spacegray)
 
 
