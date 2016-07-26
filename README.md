@@ -137,11 +137,11 @@ brew tap homebrew/versions
 brew tap homebrew/homebrew-php
 
 
-### PHP55
+### PHP56
 
-brew install --without-apache --with-fpm --with-mysql php55
+brew install --without-apache --with-fpm --with-mysql php56
 
-brew install php55-xdebug composer
+brew install php56-xdebug composer
 
 
 ### PHP70
