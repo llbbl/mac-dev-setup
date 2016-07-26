@@ -136,9 +136,19 @@ brew tap homebrew/versions
 
 brew tap homebrew/homebrew-php
 
+
+### PHP55
+
 brew install --without-apache --with-fpm --with-mysql php55
 
 brew install php55-xdebug composer
+
+
+### PHP70
+
+brew install --without-apache --with-fpm --with-mysql php70
+
+brew install php70-xdebug php70-mcrypt composer
 
 
 ## nginx
